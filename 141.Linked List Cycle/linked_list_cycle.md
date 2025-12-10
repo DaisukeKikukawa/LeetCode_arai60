@@ -4,7 +4,7 @@
 
 ```typescript
 function hasCycle(head: ListNode | null): boolean {
-    if(head == null) {
+    if (head == null) {
         return false;
     }
     
@@ -12,14 +12,14 @@ function hasCycle(head: ListNode | null): boolean {
     let slow = head;
 
     while(fast != null) {
-        if(fast.next != null) {
+        if (fast.next != null) {
             fast = fast.next.next;
         } else {
             return false;
         }
         slow = slow.next;
 
-        if(fast == slow) {
+        if (fast == slow) {
             return true;
         }
     }
@@ -32,18 +32,18 @@ step1のコードだと`return false`が2回あるため、これを共通化で
 
 ```typescript
 function hasCycle(head: ListNode | null): boolean {
-    if(head == null) {
+    if (head == null) {
         return false;
     }
 
     let fast = head;
     let slow = head;
 
-    while(fast != null && fast.next != null) {
+    while (fast != null && fast.next != null) {
         fast = fast.next.next;
         slow = slow.next;
 
-        if(fast == slow) {
+        if (fast == slow) {
             return true;
         }
     }
@@ -55,7 +55,7 @@ function hasCycle(head: ListNode | null): boolean {
 step2のコードを3連続で10分以内に1回もエラーを出さずに書ける状態になるまで繰り返す
 ```typescript
 function hasCycle(head: ListNode | null): boolean {
-    if(head == null) {
+    if (head == null) {
         return false;
     }
     let fast = head;
@@ -81,6 +81,7 @@ Floyd's tortoise and hareはソフトウェアエンジニアの常識には含�
 - まずSetオブジェクトを作成する
   - これはSetではなく、Arrayでも良いのか？計算量が多くなってしまうからSetの方が適している？問題に正解するだけならArrayでも解くことはできた。
 - nodeをwhile文で回していく
+  - while (node != null)とすることで、先頭のif (head == null) { return false;}はいらなくなる
   - もしnodeがnullの場合は循環がないのでfalseを返すようにする。この部分は今までと同じやり方でよさそう
   - もしSetオブジェクトの中に対象のnodeが存在しているなら、これは循環があることになるのでtrueを返す。この部分も今までと同じやり方でよさそう。
   - Setオブジェクトへの追加、nodeの更新を行えばnodeを1つ1つ確認できる。
@@ -88,10 +89,6 @@ Floyd's tortoise and hareはソフトウェアエンジニアの常識には含�
 
 ```typescript
 function hasCycle(head: ListNode | null): boolean {
-    if (head == null) {
-        return false;
-    }
-
     let node = head;
     let visited = new Set<ListNode>();
 
