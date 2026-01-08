@@ -14,4 +14,4 @@
 
 ## Heap, PriorityQueue
 - [703. Kth Largest Element in a Stream](https://github.com/DaisukeKikukawa/LeetCode_arai60/pull/9)
-
+- [347. Top K Frequent Elements](https://github.com/DaisukeKikukawa/LeetCode_arai60/pull/10)
