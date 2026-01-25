@@ -20,4 +20,4 @@
 ## HashMap
 - [1. Two Sum](https://github.com/DaisukeKikukawa/LeetCode_arai60/pull/12)
 - [49. Group Anagrams](https://github.com/DaisukeKikukawa/LeetCode_arai60/pull/13)
-
+- [349. Intersection of Two Arrays](https://github.com/DaisukeKikukawa/LeetCode_arai60/pull/14)
